@@ -9,9 +9,9 @@ app.factory('mySocket', function(socketFactory) {
   return mySocket;
 });
 app.controller('myCtrl', function($scope, mySocket){
-  $scope.gtKC = 1;
+  $scope.gtKC = 0;
   $scope.CamBienKC = "Chưa được cập nhật";
-  $scope.gtMua = 0;
+  $scope.gtMua = 1;
   $scope.CamBienMua = "Chưa được cập nhật";
   $scope.gtGas = 0;
   $scope.CamBienGas = "Chưa được cập nhật";
@@ -56,7 +56,7 @@ app.controller('myCtrl', function($scope, mySocket){
     	$scope.gtKC = json.distanceValue
 		$scope.CamBienKC = (json.distanceValue == 0) ? "Không có người!" : "Có người nhé!"
 		$scope.gtMua = json.mua
-		$scope.CamBienMua = (json.mua == 0) ? "Khong có mưa!" : "Có mưa nhé!"
+		$scope.CamBienMua = (json.mua == 1) ? "Khong có mưa!" : "Có mưa nhé!"
 		$scope.gtGas = json.gas
 		$scope.CamBienGas = (json.gas == 0) ? "An toàn!" : "Nguy hiểm có khi gas!"
 		$scope.CamBienND = json.temp + " độ C"
