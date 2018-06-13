@@ -45,8 +45,8 @@ app.controller('myCtrl', function($scope, mySocket){
     mySocket.on('SENSOR', function(json) {
     	$scope.gtKC = json.distanceValue
 		$scope.CamBienKC = (json.distanceValue == 0) ? "Không có người!" : "Có người nhé!"
-		$scope.gtMua = json.mua
-		$scope.CamBienMua = (json.mua == 0) ? "Không có mưa!" : "Có mưa nhé!"
+		$scope.gtMua = json.rainValue
+		$scope.CamBienMua = (json.rainValue == 0) ? "Không có mưa!" : "Có mưa nhé!"
 		$scope.gtGas = json.gas
 		$scope.CamBienGas = (json.gas == 0) ? "An toàn!" : "Nguy hiểm có khi gas!"
 		$scope.CamBienND = json.temp + " độ C"
