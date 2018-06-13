@@ -17,8 +17,6 @@ app.controller('myCtrl', function($scope, mySocket){
   $scope.CamBienGas = "Chưa được cập nhật";
   $scope.CamBienND = "Chưa được cập nhật";
   $scope.CamBienDA = "Chưa được cập nhật";
-  $scope.leds_status = [1, 1]
-  $scope.lcd = ["", ""]
 
     $scope.updateSensor  = function() {
   		mySocket.emit("SENSOR")
@@ -41,14 +39,6 @@ app.controller('myCtrl', function($scope, mySocket){
         $scope.changeLED();
     }
 
-    $scope.updateLCD = function() {
-
-
-  		var json = {
-  			"line": $scope.lcd
-  		}
-  		console.log("LCD_PRINT ", $scope.lcd)
-  		mySocket.emit("LCD_PRINT", json)
   	}
 
 
